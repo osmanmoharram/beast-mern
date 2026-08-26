@@ -1,0 +1,41 @@
+{
+    "compilerOptions": {
+        /* Language & environment */
+        "target": "es2023",
+        "lib": ["es2023"],
+        "types": ["node"],
+
+        /* Modules: Node ESM, resolved the way Node resolves */
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "resolveJsonModule": true,
+        "verbatimModuleSyntax": true,
+
+        /* Write `./foo.ts` in imports; tsc rewrites them to `./foo.js` on build,
+           and `node src/index.ts` runs the same source unmodified. */
+        "allowImportingTsExtensions": true,
+        "rewriteRelativeImportExtensions": true,
+
+        /* Emit */
+        "rootDir": "src",
+        "outDir": "dist",
+        "sourceMap": true,
+        "removeComments": false,
+
+        /* Type checking */
+        "strict": true,
+        "noUncheckedIndexedAccess": true,
+        "noImplicitOverride": true,
+        "noFallthroughCasesInSwitch": true,
+        "isolatedModules": true,
+
+        /* Node strips types rather than compiling them, so only erasable
+           syntax is allowed (no enums, namespaces, or parameter properties). */
+        "erasableSyntaxOnly": true,
+
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules", "dist"]
+}
