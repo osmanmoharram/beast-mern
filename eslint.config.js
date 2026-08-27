@@ -20,6 +20,32 @@ export default tseslint.config(
                 tsconfigRootDir: import.meta.dirname,
             },
         },
+        rules: {
+            /* A leading underscore marks a binding as deliberately unused. */
+            '@typescript-eslint/no-unused-vars': [
+                'error',
+                {
+                    argsIgnorePattern: '^_',
+                    varsIgnorePattern: '^_',
+                    caughtErrorsIgnorePattern: '^_',
+                    ignoreRestSiblings: true,
+                },
+            ],
+
+            /* node:test awaits the promises returned by describe/test itself. */
+            '@typescript-eslint/no-floating-promises': [
+                'error',
+                {
+                    allowForKnownSafeCalls: [
+                        {
+                            from: 'package',
+                            package: 'node:test',
+                            name: ['describe', 'it', 'test'],
+                        },
+                    ],
+                },
+            ],
+        },
     },
 
     /* Config files aren't in tsconfig's `include`, so they get no type info. */

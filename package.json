@@ -9,7 +9,7 @@
     },
     "scripts": {
         "dev": "node --watch --env-file-if-exists=.env src/index.ts",
-        "build": "npm run clean && node node_modules/typescript7/bin/tsc",
+        "build": "npm run clean && node node_modules/typescript7/bin/tsc -p tsconfig.build.json",
         "start": "node --env-file-if-exists=.env dist/index.js",
         "typecheck": "node node_modules/typescript7/bin/tsc --noEmit",
         "clean": "node --eval \"fs.rmSync('dist', { recursive: true, force: true })\"",
@@ -24,6 +24,7 @@
     "license": "ISC",
     "dependencies": {
         "@types/helmet": "^0.0.48",
+        "@types/mongoose": "^5.11.96",
         "bcrypt": "^6.0.0",
         "cors": "^2.8.6",
         "express": "^5.2.1",
