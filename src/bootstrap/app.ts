@@ -2,7 +2,7 @@ import express, { type Express } from 'express';
 import connectToDatabase from './database.ts';
 import cors from 'cors';
 import helmet from 'helmet';
-import router from '../routes/index.ts';
+import router from '../routes/index.routes.ts';
 
 await connectToDatabase();
 
