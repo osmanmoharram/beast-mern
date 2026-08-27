@@ -2,8 +2,8 @@ import { type NextFunction, type Request, type Response } from 'express';
 import zod from 'zod';
 
 const userFields = zod.object({
-    name: zod.string().min(3).max(50),
-    email: zod.email(),
+    name: zod.string().min(3).max(50).trim().toLowerCase(),
+    email: zod.email().trim().toLowerCase(),
     password: zod.string(),
     confirm: zod.string(),
 });

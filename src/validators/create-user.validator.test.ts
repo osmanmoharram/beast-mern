@@ -1,7 +1,7 @@
 import { describe, test } from 'node:test';
 import assert from 'node:assert/strict';
 import type { NextFunction, Request, Response } from 'express';
-import validateCreateUser from './create-user.validator.ts';
+import validateCreateUser from './auth/register.validator.ts';
 
 type Captured = { status?: number; body?: unknown; nextCalled: boolean };
 
